@@ -20,7 +20,6 @@ $request = Request::createFromGlobals();
 $routes = include __DIR__.'/api/routes.php';
 
 
-
 $context = new Routing\RequestContext();
 $context->fromRequest($request);
 
@@ -34,7 +33,7 @@ try {
      extract($matcher->match($request->getPathInfo()), EXTR_SKIP);
      include sprintf(__DIR__.'/api/src/controller/%s.php', $_route);
      $match = $matcher->match($request->getPathInfo());
-
+     
   	 $request->attributes->add($match);
 
      $controller = $resolver->getController($request);
@@ -51,6 +50,7 @@ try {
 
     //$response = new Response(ob_get_clean());
 } catch (Routing\Exception\ResourceNotFoundException $e) {
+
     $response = new Response($e, 404);
 } catch (Exception $e) {
     $response = new Response($e, 500);
