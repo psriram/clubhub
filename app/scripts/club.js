@@ -5,8 +5,10 @@ function copySchedule(class_schedule_id){
     //var data = 'schedule_id='+ class_schedule_id
 
     var location_id = $("#hdnLocation").val();
+    
                     //alert(location_id);
     var location_name = $('#locKeywords').val();
+    
     var data = {club_location_id : location_id,location_name:location_name}
     $.ajax({
         url: "/activityfinder/prototype/clubs/getschedulehtml",

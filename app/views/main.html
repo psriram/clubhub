@@ -1,23 +1,76 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+ <script src="scripts/location.js"></script>
+     
+         <div class="divide40"></div>
+        <form id="searchForm" action="/activityfinder/layouts/home/searchresults" method="post">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="purchase-section ">
+                <div class="row">
+                    <div class="col-md-4">
+                            <div class="dropdown">
+                                  <input
+                                    id="mainKeywords"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    type="text"
+                                    name="keywords"
+                                    size="50"
+                                    maxlength="100"
+                                    value=""
+                                    placeholder="All Activities"
+                                    />
+                              
+                                
+                                  <ul class="dropdown-menu" id="simple-criteria" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation" ng-repeat="activity in activities">
+                                      <a role="menuitem" tabindex="-1" href="javascript:;" data-key="{{activity}}" data-name="{{activity}}">{{activity}}</a>
+                                    </li>
+                                     
+                                   </ul>
+                                </div>
+                       </div>
+                      <div class="col-md-1">
+                                within
+                     </div>
+                       <div class="col-md-1">
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+                            <div class="dropdown">
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+                                <a href="javascript:;" id="lnkradius"class="dropdown-toggle"  data-toggle="dropdown">5</a> miles
+                                <ul class="dropdown-menu" id="simple-radius">
+                                    <li><a href="javascript:;" data-value="2" data-copy="2">
+                                    2
+                                    </a></li>
+                                    <li><a href="javascript:;" data-value="10" data-copy="10">
+                                    10
+                                </a></li>
+                                </ul>
+                                 <input type="hidden" id="hdnRadius" name="hdnRadius" value="5"/>
+                            </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+                     </div>
+                       <div class="col-md-1">
+                               of
+                     </div>
+                        <div class="col-md-3">
+                             <div id="locationField">
+                              <input id="autocomplete" placeholder="Enter your city"
+                                     onFocus="geolocate()" type="text"></input>
+                                     <input type="hidden" id="hdnLat" name="hdnLat"/>
+                               <input type="hidden" id="hdnLong" name="hdnLong"/>
+                            </div>
+                     
+
+                       </div>
+                       <div class="col-md-1">
+                            <input type="submit" name="go" id="go" value="Go" /><br />
+                       </div>
+
+                </div>
+            </div>
+          </div>
+        </div>
+
+        </div><!--purchase section-->
+       </form>

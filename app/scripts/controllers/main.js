@@ -9,9 +9,9 @@
  */
 angular.module('sitesApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    $scope.activities = [
+      'Soccer',
+      'Lacrosse',
+      'Music'
     ];
   });
